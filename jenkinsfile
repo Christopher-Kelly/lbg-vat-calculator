@@ -1,6 +1,6 @@
 pipeline {
-    agent any
-    stages {
+  agent any
+  stages {
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
@@ -13,7 +13,7 @@ pipeline {
                 sh "npm install "
                 }
         }
-        stage('Checkout') {
+        stage('Test') {
             steps {
                 // Get some code from a GitHub repository
                 sh "npm test"
