@@ -7,6 +7,18 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Christopher-Kelly/lbg-vat-calculator'
             }
         }
+        stage('Install') {
+            steps {
+                // Get some code from a GitHub repository
+                sh "npm install "
+                }
+        }
+        stage('Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                sh "npm test"
+                }
+        }
         stage('SonarQube Analysis') {
             environment {
                 scannerHome = tool 'sonarqube'
